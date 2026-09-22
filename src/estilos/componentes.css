@@ -1,0 +1,258 @@
+/* ═══════════════ FONDO ═══════════════ */
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--crema);
+}
+/* Dos luces cálidas muy difusas: dan profundidad sin parecer un degradado */
+.fondo__luz {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+.fondo__luz--alta {
+  top: -22vh; left: 50%;
+  width: min(120vw, 940px); height: min(70vh, 560px);
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(250, 221, 147, 0.34), transparent 72%);
+}
+.fondo__luz--baja {
+  bottom: -26vh; left: 18%;
+  width: min(100vw, 760px); height: min(58vh, 460px);
+  background: radial-gradient(closest-side, rgba(237, 241, 231, 0.75), transparent 70%);
+}
+
+/* ═══════════════ PÉTALOS A LA DERIVA ═══════════════ */
+.petalos {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.petalo {
+  position: absolute;
+  top: -8vh;
+  will-change: transform, opacity;
+  animation-name: caer;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+.petalo svg { display: block; }
+
+@keyframes caer {
+  0%   { transform: translate3d(0, -10vh, 0) rotate(0deg) scale(var(--escala)); opacity: 0; }
+  12%  { opacity: var(--opacidad); }
+  88%  { opacity: var(--opacidad); }
+  100% { transform: translate3d(var(--deriva), 112vh, 0) rotate(var(--giro)) scale(var(--escala)); opacity: 0; }
+}
+
+/* ═══════════════ BOTONES ═══════════════ */
+.boton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 15px 30px;
+  border-radius: var(--r-full);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  transform-origin: center;
+}
+.boton__texto { display: inline-block; }
+
+.boton--principal {
+  color: #40300C;
+  background: linear-gradient(176deg, #FBDE94 0%, #F2C13C 62%, #EDB52C 100%);
+  box-shadow: var(--sombra-boton);
+}
+.boton--principal::after {
+  /* Brillo superior de un milímetro: le da el acabado de botón físico */
+  content: '';
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 45%;
+  border-radius: var(--r-full);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  pointer-events: none;
+}
+
+.boton--suave {
+  color: var(--tinta-media);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--linea);
+  box-shadow: var(--sombra-baja);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.boton--grande {
+  min-height: 58px;
+  padding: 17px 42px;
+  font-size: 1.0625rem;
+  letter-spacing: 0.03em;
+}
+
+.boton--spotify { margin-top: 18px; }
+
+/* El botón que huye.
+   Descansa justo debajo de "TE AMO", como un segundo botón normal.
+   El resto de la zona es espacio invisible por donde escapar. */
+.boton--esquivo {
+  position: absolute;
+  left: 50%;
+  top: var(--reposo-no, 74px);
+  margin-left: -58px;
+  width: 116px;
+  min-height: 44px;
+  padding: 11px 14px;
+  font-size: 0.8125rem;
+  z-index: 1;                 /* siempre por debajo de "TE AMO" */
+  will-change: transform;
+}
+.boton--esquivo.esta-rendido { pointer-events: none; }
+
+/* ═══════════════ ESTALLIDO AL DECIR QUE SÍ ═══════════════ */
+.estallido {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.chispa {
+  position: absolute;
+  top: 0; left: 0;
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* ═══════════════ PANEL DE LOS REGALOS ═══════════════ */
+.velo {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(84, 66, 34, 0.18);
+  backdrop-filter: blur(14px) saturate(115%);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 92svh;
+  background: var(--papel);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  box-shadow: var(--sombra-alta);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.panel__cabeza {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 60px 14px;
+  border-bottom: 1px solid var(--linea-suave);
+  background: linear-gradient(to bottom, var(--papel) 70%, rgba(255, 253, 248, 0.6));
+}
+.panel__agarre {
+  position: absolute;
+  top: 9px; left: 50%;
+  width: 38px; height: 4px;
+  margin-left: -19px;
+  border-radius: var(--r-full);
+  background: var(--linea);
+}
+.panel__titulo {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+  text-align: center;
+}
+.panel__titulo .emoji-suave { letter-spacing: 0; }
+.panel__cerrar {
+  position: absolute;
+  top: 50%; right: 14px;
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  margin-top: -14px;
+  color: var(--tinta-suave);
+  background: var(--crema-hondo);
+  border-radius: var(--r-full);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.panel__cerrar:hover { background: var(--amarillo-palido); color: var(--tinta); }
+.panel__cerrar:active { transform: scale(0.92); }
+
+.panel__cuerpo {
+  flex: 1;
+  min-height: 0;
+  padding: 30px var(--gutter) calc(40px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+@media (min-width: 768px) {
+  .velo { align-items: center; padding: 32px; }
+  .panel {
+    max-width: 46rem;
+    max-height: min(86svh, 780px);
+    border-radius: var(--r-xl);
+  }
+  .panel__agarre { display: none; }
+  .panel__cabeza { padding: 20px 60px 18px; }
+  .panel__cuerpo { padding: 36px 44px 46px; }
+}
+
+/* ═══════════════ BOTÓN DE MÚSICA ═══════════════ */
+.musica {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, calc(env(safe-area-inset-bottom) + 6px));
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 46px; height: 46px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--linea);
+  border-radius: var(--r-full);
+  box-shadow: var(--sombra-baja);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.musica__ondas { display: flex; align-items: center; gap: 2.5px; height: 15px; }
+.musica__ondas span {
+  display: block;
+  width: 2.5px; height: 5px;
+  background: var(--dorado-suave);
+  border-radius: var(--r-full);
+  transition: height 0.3s ease;
+}
+.musica.esta-sonando .musica__ondas span { animation: pulsar 1.1s ease-in-out infinite; }
+.musica.esta-sonando .musica__ondas span:nth-child(2) { animation-delay: 0.18s; }
+.musica.esta-sonando .musica__ondas span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes pulsar {
+  0%, 100% { height: 5px; }
+  50%      { height: 14px; }
+}

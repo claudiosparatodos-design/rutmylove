@@ -1,0 +1,8 @@
+Guarda aquí las fotos del álbum.
+
+Después, en  src/contenido.js , dentro de FOTOS, escribe la ruta corta:
+
+    imagen: 'fotos/el-nombre-de-tu-foto.jpg'
+
+Consejo: redúcelas a unos 1600 px de ancho antes de subirlas.
+Así la página abre mucho más rápido en el celular.

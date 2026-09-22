@@ -1,0 +1,72 @@
+/* ─── Lenguaje visual: primavera cálida, mucho espacio negativo ─── */
+:root {
+  /* Fondos */
+  --crema:          #FDFBF6;
+  --crema-hondo:    #F8F2E6;
+  --papel:          #FFFDF8;
+  --papel-calido:   #FFFBF0;
+
+  /* Amarillos */
+  --amarillo:       #F2C13C;
+  --amarillo-claro: #F9DC8C;
+  --amarillo-palido:#FCEFC4;
+  --amarillo-niebla:#FDF6E0;
+  --dorado:         #C08A2E;
+  --dorado-suave:   #D9A94C;
+
+  /* Verdes muy tenues (hojas) */
+  --verde:          #A7B79A;
+  --verde-hondo:    #7C8E70;
+  --verde-niebla:   #EDF1E7;
+
+  /* Tinta */
+  --tinta:          #2B2723;
+  --tinta-media:    #5C544B;
+  --tinta-suave:    #8A8076;
+  --tinta-tenue:    #ADA398;
+
+  /* Líneas y sombras */
+  --linea:          rgba(43, 39, 35, 0.09);
+  --linea-suave:    rgba(43, 39, 35, 0.055);
+  --sombra-baja:    0 1px 2px rgba(74, 61, 40, 0.04),
+                    0 4px 14px rgba(74, 61, 40, 0.05);
+  --sombra-media:   0 2px 6px rgba(74, 61, 40, 0.05),
+                    0 12px 34px rgba(74, 61, 40, 0.08);
+  --sombra-alta:    0 4px 12px rgba(74, 61, 40, 0.06),
+                    0 26px 70px rgba(74, 61, 40, 0.13);
+  --sombra-boton:   0 1px 2px rgba(146, 104, 24, 0.14),
+                    0 8px 22px rgba(196, 149, 45, 0.24);
+
+  /* Radios */
+  --r-xs: 10px;
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 36px;
+  --r-full: 999px;
+
+  /* Tipografía */
+  --serif: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype',
+           Palatino, 'Times New Roman', Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI',
+          Inter, Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Ritmo vertical */
+  --aire-sm: 20px;
+  --aire-md: 34px;
+  --aire-lg: 56px;
+  --aire-xl: 88px;
+
+  /* Márgenes laterales (nunca menos de 20px en móvil) */
+  --gutter: 20px;
+  --ancho-lectura: 34rem;
+  --ancho-max: 60rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 40px;
+    --aire-lg: 72px;
+    --aire-xl: 120px;
+  }
+}

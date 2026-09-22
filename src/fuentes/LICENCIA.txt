@@ -1,0 +1,9 @@
+Instrument Serif
+Copyright (c) 2022 The Instrument Serif Project Authors
+(https://github.com/Instrument/instrument-serif)
+
+Distribuida bajo la SIL Open Font License, Version 1.1.
+Texto completo de la licencia: https://openfontlicense.org
+
+Archivos descargados desde Google Fonts (fonts.gstatic.com) y
+alojados aquí para que la página no dependa de una CDN externa.

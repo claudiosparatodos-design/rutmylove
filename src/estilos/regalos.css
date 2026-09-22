@@ -1,0 +1,426 @@
+/* ═════════════ FLOR 1 · UNA CANCIÓN PARA TI ═════════════ */
+.cancion { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+.cancion__portada {
+  display: block;
+  width: min(100%, 17rem);
+  text-decoration: none;
+  border-radius: var(--r-lg);
+}
+.cancion__marco {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--amarillo-niebla);
+  box-shadow: var(--sombra-media);
+  will-change: transform;
+}
+.cancion__marco img,
+.cancion__respaldo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+.cancion__esqueleto {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--amarillo-niebla) 30%, var(--crema) 50%, var(--amarillo-niebla) 70%);
+  background-size: 220% 100%;
+  animation: brillar 1.7s ease-in-out infinite;
+}
+@keyframes brillar {
+  0%   { background-position: 130% 0; }
+  100% { background-position: -30% 0; }
+}
+
+.cancion__play {
+  position: absolute;
+  right: 14px; bottom: 14px;
+  display: grid;
+  place-items: center;
+  width: 46px; height: 46px;
+  padding-left: 3px;
+  color: var(--tinta);
+  background: rgba(255, 253, 248, 0.9);
+  border-radius: var(--r-full);
+  box-shadow: var(--sombra-baja);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.cancion__portada:hover .cancion__play { transform: scale(1.08); }
+
+.cancion__ficha { margin-top: 26px; }
+.cancion__titulo { font-size: clamp(1.5rem, 6.5vw, 2rem); margin-top: 8px; }
+.cancion__artista { margin-top: 4px; font-size: 0.9375rem; color: var(--tinta-suave); }
+
+/* Onda decorativa bajo el título */
+.onda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 26px;
+  margin-top: 18px;
+}
+.onda span {
+  width: 2.5px;
+  height: 6px;
+  border-radius: var(--r-full);
+  background: var(--amarillo-claro);
+  opacity: 0.5;
+}
+/* Alturas variadas pero fijas: da forma de onda sin animar nada */
+.onda span:nth-child(5n + 1) { height: 9px;  opacity: 0.46; }
+.onda span:nth-child(5n + 2) { height: 17px; opacity: 0.72; }
+.onda span:nth-child(5n + 3) { height: 23px; opacity: 0.9; }
+.onda span:nth-child(5n + 4) { height: 13px; opacity: 0.62; }
+.onda span:nth-child(5n + 5) { height: 7px;  opacity: 0.42; }
+
+.dedicatoria {
+  position: relative;
+  margin-top: var(--aire-lg);
+  padding: 28px 24px 26px;
+  max-width: 30rem;
+  text-align: left;
+  background: var(--papel-calido);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--r-md);
+  box-shadow: var(--sombra-baja);
+}
+.dedicatoria__comilla {
+  position: absolute;
+  top: 2px; left: 16px;
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--amarillo-claro);
+  pointer-events: none;
+}
+.dedicatoria__parrafo {
+  position: relative;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.62;
+  color: var(--tinta);
+  text-wrap: pretty;
+}
+.dedicatoria__parrafo + .dedicatoria__parrafo { margin-top: 16px; }
+
+/* ═════════════ FLOR 2 · COSAS QUE AMO DE TI ═════════════ */
+.frases { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+.frases__escenario {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 210px;
+}
+.frases__escenario > * { grid-area: 1 / 1; }
+
+.frases__invitacion { font-size: 1.75rem; color: var(--tinta-suave); }
+
+.tarjeta {
+  position: relative;
+  width: min(100%, 25rem);
+  margin: 0;
+  padding: 36px 26px 26px;
+  background: var(--papel);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--r-md);
+  box-shadow: var(--sombra-media);
+  will-change: transform, opacity;
+}
+.tarjeta__flor {
+  position: absolute;
+  top: -13px; left: 50%;
+  display: grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  margin-left: -15px;
+  background: var(--papel);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--r-full);
+}
+.tarjeta__texto {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  line-height: 1.45;
+  color: var(--tinta);
+  text-wrap: pretty;
+}
+.tarjeta__conteo {
+  display: block;
+  margin-top: 18px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+}
+
+.frases__guardadas {
+  width: min(100%, 25rem);
+  margin: var(--aire-lg) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linea-suave);
+}
+.frases__guardadas li {
+  overflow: hidden;
+  padding: 11px 4px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--tinta-tenue);
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.frases__pie {
+  display: grid;
+  place-items: center;
+  min-height: 62px;
+  margin-top: var(--aire-md);
+}
+.frases__pie > * { grid-area: 1 / 1; }
+.frases__fin {
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  color: var(--dorado);
+  max-width: 24rem;
+}
+
+/* ═════════════ FLOR 3 · NUESTROS MOMENTOS ═════════════ */
+.album { display: flex; flex-direction: column; align-items: center; }
+
+.album__escenario {
+  display: grid;
+  place-items: start center;
+  width: 100%;
+  min-height: 340px;
+}
+.album__escenario > * { grid-area: 1 / 1; }
+
+.album__hoja {
+  width: min(100%, 25rem);
+  text-align: center;
+  cursor: grab;
+  touch-action: pan-y;
+  will-change: transform, opacity;
+}
+.album__hoja:active { cursor: grabbing; }
+
+.album__marco {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--crema-hondo);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sombra-media);
+}
+.album__marco img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity 0.65s ease;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.album__esqueleto {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--crema-hondo) 30%, var(--crema) 50%, var(--crema-hondo) 70%);
+  background-size: 220% 100%;
+  animation: brillar 1.7s ease-in-out infinite;
+}
+.album__vacio {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--amarillo-niebla);
+}
+
+.album__pie { margin: 20px 4px 0; }
+.album__titulo {
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  line-height: 1.3;
+  color: var(--tinta);
+}
+.album__texto { margin-top: 8px; font-size: 0.9375rem; line-height: 1.65; }
+
+.album__cierre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  aspect-ratio: 4 / 5;
+  padding: 32px;
+  background: var(--papel-calido);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sombra-baja);
+}
+.album__cierre-texto {
+  font-size: 1.5rem;
+  line-height: 1.34;
+  max-width: 14ch;
+}
+
+.album__mandos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: var(--aire-md);
+}
+.album__flecha {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  color: var(--tinta-media);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--linea);
+  border-radius: var(--r-full);
+  transition: opacity 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.album__flecha:hover:not(:disabled) { background: var(--amarillo-palido); }
+.album__flecha:active:not(:disabled) { transform: scale(0.92); }
+.album__flecha:disabled { opacity: 0.32; cursor: default; }
+
+.album__puntos { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.album__punto {
+  display: block;
+  width: 7px; height: 7px;
+  padding: 0;
+  background: var(--linea);
+  border-radius: var(--r-full);
+  transition: background 0.35s ease, transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.album__punto.esta-activo { background: var(--amarillo); transform: scale(1.45); }
+
+/* Área táctil cómoda sin agrandar el punto visible */
+.album__puntos li { display: grid; place-items: center; width: 22px; height: 30px; }
+
+/* ═════════════ FLOR 4 · UNA CARTA PARA TI ═════════════ */
+.carta { perspective: 1200px; }
+
+.carta__hoja {
+  position: relative;
+  padding: 40px 26px 34px;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 140px),
+    var(--papel-calido);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sombra-media);
+  overflow: hidden;
+}
+
+.carta__encabezado { text-align: center; }
+.carta__para { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+.carta__filete {
+  display: block;
+  width: 56px; height: 1px;
+  margin: 18px auto 0;
+  background: var(--amarillo-claro);
+}
+
+.carta__texto { margin-top: var(--aire-md); }
+.carta__texto p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.78;
+  color: var(--tinta);
+  text-wrap: pretty;
+}
+.carta__texto p + p { margin-top: 20px; }
+
+.carta__firma { margin-top: var(--aire-lg); text-align: right; }
+.carta__despedida {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--tinta-suave);
+  font-style: italic;
+}
+.carta__nombre { margin-top: 6px; font-size: 1.5rem; color: var(--dorado); }
+
+@media (min-width: 768px) {
+  .carta__hoja { padding: 54px 52px 44px; }
+  .carta__texto p { font-size: 1.25rem; }
+}
+
+/* ═════════════ FLOR 5 · PARA CUANDO ME EXTRAÑES ═════════════ */
+.extranar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Cielo discretísimo: una luna con su halo y tres puntos. Nada más. */
+.cielo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 128px;
+  height: 92px;
+  margin-bottom: 6px;
+}
+.cielo__halo {
+  position: absolute;
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(249, 220, 140, 0.4), transparent 70%);
+}
+.cielo__luna { position: relative; }
+.cielo__estrella {
+  position: absolute;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--dorado-suave);
+}
+.cielo__estrella--a { top: 12px; left: 14px; opacity: 0.4; }
+.cielo__estrella--b { bottom: 18px; right: 12px; opacity: 0.3; }
+.cielo__estrella--c { top: 26px; right: 20px; width: 2px; height: 2px; opacity: 0.45; }
+
+.extranar__titulo {
+  position: relative;
+  font-size: clamp(1.75rem, 7vw, 2.375rem);
+  margin-top: 4px;
+}
+.extranar__subtitulo { margin-top: 12px; font-size: 1rem; max-width: 22rem; }
+
+.extranar__escenario {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 190px;
+  margin: var(--aire-md) 0;
+}
+.extranar__escenario > * { grid-area: 1 / 1; }
+
+.sobre {
+  width: min(100%, 25rem);
+  margin: 0;
+  padding: 30px 26px;
+  font-family: var(--serif);
+  font-size: 1.3125rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  text-wrap: pretty;
+  background: var(--papel);
+  border: 1px solid var(--linea-suave);
+  border-radius: var(--r-md);
+  box-shadow: var(--sombra-media);
+  will-change: transform, opacity;
+}
