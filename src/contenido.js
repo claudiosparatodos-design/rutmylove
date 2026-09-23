@@ -20,7 +20,7 @@ export const NOMBRES = {
   ella: 'rutsita',
 
   // 2 · Cómo firmas tú (aparece al final de la carta)
-  tu: 'Tu novio',
+  tu: 'Sayet',
 }
 
 /* ───────────────────────────────────────────────────────────────
@@ -90,13 +90,13 @@ export const FOTOS = [
   {
     imagen: 'fotos/recuerdo-1-zucaritas.jpg',
     titulo: '',
-    texto: 'Me hacías feliz con tus videos, esos que hacías para que cayeran como gorda en tobogán, rendidos a tus pies según tú jajajaja. Na, pero en serio, me gustaban mucho esos videos que ni te pedía y me mandabas porque sí, me alegraban el día. Era muy bonito, neta que me dibujabas una sonrisota :) Ahora no veo unas Zucaritas sin pensar en ti jajajaja.',
+    texto: 'Me hacías feliz con tus videos, esos que hacías para que cayera como gorda en tobogán, rendido a tus pies según tú jajajajaja. Na, pero en serio, me gustaban mucho esos videos que ni te pedía y me mandabas porque sí, me alegraban el día. Era muy bonito, neta que me dibujabas una sonrisota :) Ahora no veo unas Zucaritas sin pensar en ti jajajaja.',
     fecha: '',
   },
   {
     imagen: 'fotos/recuerdo-2-mascarilla.jpg',
     titulo: '',
-    texto: 'Otra prueba de que me mandabas fotos bien cool jajajaja. ¿Aunque pones esas mascarillas? Hay que ponernos unas.',
+    texto: 'Otra prueba de que me mandabas fotos bien cool jajajaja. ¿Aún te pones esas mascarillas? Hay que ponernos unas.',
     fecha: '',
   },
   {
@@ -112,8 +112,7 @@ export const FOTOS = [
     fecha: '',
   },
   {
-    // ⚠️  FALTA LA FOTO: guárdala como  public/fotos/recuerdo-5-noches.jpg
-    imagen: 'fotos/recuerdo-5-noches.jpg',
+    imagen: 'fotos/recuerdo-5-llamada.jpg',
     titulo: '',
     texto: 'Esas noches en las que hablábamos horas... que se repita. Por cierto, Google Fotos guarda muchos recuerdos jajajaja. Y me gusta decirte Rutelia, perdón si a ti no te gusta jajajaja, ya no te digo así pues. Bueno, nomás a veces, no te enojes.',
     fecha: '',
@@ -135,16 +134,33 @@ export const CARTA = {
   encabezado: 'Para mi rutsita 💛',
 
   // ✏️  AQUÍ VA TU CARTA  ✏️
-  texto: `Aquí va tu carta.
+  texto: `Ufff, pues hola, rutsita. Quería tener un detalle contigo y, por la
+distancia, esta fue la manera que encontré para estar un poquito más cerca de
+ti. De algo tenía que servir la carrera jajaja.
 
-Borra este texto y escribe lo que quieras decirle. Puedes poner tantos
-párrafos como necesites: solamente deja una línea en blanco entre uno y
-otro y la página los va a separar sola.
+Aquí, en estas palabras, quería ser un poco más tranquilo y decirte que
+realmente me gusta verte, y que me la paso bien cuando te veo. Son momentos en
+los que no pienso en nada más, solo en ti y en la plática que tengo contigo. Mi
+mente no está en ningún otro lado, solo contigo.
 
-No hay límite de espacio. Escribe con calma.`,
+Eso es lo que me hace sentir la meditación, la música, el respirar... en fin,
+cosas buenas. Por eso sé que me haces bien: es un sentimiento de paz y
+tranquilidad, justamente la paz y la serenidad que me gustaría tener siempre en
+mi vida. Y por eso disfruto estar contigo, y perderme en tu mirada.
+
+Te quiero mucho, Rut. Espero poder verte pronto y abrazarte tan fuerte que nos
+fundamos en uno mismo, un abrazo que dure 3 millones de años. Por lo mientras,
+te mando un abrazote.
+
+Y de una vez te aviso que planeo hacerte lovebombing. Una disculpa 😞, porque
+quiero hacerte lovebombing 80 años y luego ghostearte cuando me muera. O sea,
+ser un fantasma y estar contigo por la eternidad. Eso significa ghosting, ¿no?
+jaja.
+
+¿Aceptas?`,
 
   // Despedida
-  despedida: 'Con amor, siempre.',
+  despedida: 'Atentamente,',
   // La firma toma tu nombre de NOMBRES.tu (arriba del todo)
 }
 
@@ -156,12 +172,12 @@ No hay límite de espacio. Escribe con calma.`,
    los haya visto todos.
    ─────────────────────────────────────────────────────────────── */
 export const MENSAJES_EXTRANAR = [
-  'Estoy lejos, pero eso no cambia que sigues siendo mi persona favorita.',
+  'Eres mi persona favorita.',
   'Si pudiera estar contigo ahora mismo, probablemente te estaría abrazando.',
-  'Cierra los ojos un segundo. Imagíname abrazándote. Ya sé que no es lo mismo... pero es lo más cerca que puedo estar desde aquí.',
+  'Cierra los ojos un segundo. Imagíname un momento abrazándote.',
   'No importa cuántos kilómetros haya, siempre hay una parte de mí contigo.',
   'Si estás leyendo esto es porque me extrañas. Yo también, todo el tiempo.',
-  'La distancia es lo único difícil de esto. Todo lo demás contigo es fácil.',
+  'Amarte es tan fácil, me encanta :)',
   'Respira hondo. Estoy pensando en ti justo ahora, te lo prometo.',
   'Guárdame un abrazo. Te lo voy a cobrar completo.',
   'Hoy vi algo y pensé en ti. Me pasa casi siempre.',
@@ -275,7 +291,7 @@ export const REGALOS = {
   cancion: { nombre: 'Una canción para ti', icono: '🎵' },
   frases: { nombre: 'Cosas que amo de ti', icono: '💛' },
   album: { nombre: 'Recuerdos de ti', icono: '❤️' },
-  carta: { nombre: 'Una carta para ti', icono: '💌' },
+  carta: { nombre: 'Unas palabras para ti', icono: '💌' },
   cancionMas: { nombre: 'Una canción más', icono: '🎬' },
   extranar: { nombre: 'Para cuando me extrañes', icono: '🌙' },
 }
