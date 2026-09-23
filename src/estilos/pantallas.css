@@ -191,9 +191,11 @@
   .jardin__lista > :last-child:nth-child(odd) { grid-column: auto; max-width: none; }
 }
 
-@media (min-width: 900px) {
-  .jardin { --flor-tam: clamp(128px, 11vw, 158px); }
-  .jardin__lista { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+/* Las seis en fila solo cuando hay sitio de sobra; por debajo van
+   en dos filas de tres, que respira mejor que apretarlas. */
+@media (min-width: 1100px) {
+  .jardin { --flor-tam: clamp(124px, 10vw, 156px); }
+  .jardin__lista { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
   .flor-boton { padding: 22px 6px 18px; }
   /* Solo con las cinco en fila: un ramo respira mejor desalineado.
      Se mueve la flor, no la tarjeta, para que los nombres queden

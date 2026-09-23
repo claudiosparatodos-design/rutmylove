@@ -12,6 +12,7 @@ import RegaloCancion from './regalos/RegaloCancion'
 import RegaloFrases from './regalos/RegaloFrases'
 import RegaloAlbum from './regalos/RegaloAlbum'
 import RegaloCarta from './regalos/RegaloCarta'
+import RegaloPelicula from './regalos/RegaloPelicula'
 import RegaloExtranar from './regalos/RegaloExtranar'
 
 import { leer, guardar } from './utilidades/almacenamiento'
@@ -24,6 +25,7 @@ const CONTENIDO_DE_FLOR = {
   frases:   { componente: RegaloFrases,   titulo: FRASES_TEXTOS.titulo,    icono: REGALOS.frases.icono },
   album:    { componente: RegaloAlbum,    titulo: REGALOS.album.nombre,    icono: REGALOS.album.icono },
   carta:    { componente: RegaloCarta,    titulo: REGALOS.carta.nombre,    icono: REGALOS.carta.icono },
+  cancionMas: { componente: RegaloPelicula, titulo: REGALOS.cancionMas.nombre, icono: REGALOS.cancionMas.icono },
   extranar: { componente: RegaloExtranar, titulo: EXTRANAR_TEXTOS.titulo,  icono: REGALOS.extranar.icono },
 }
 

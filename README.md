@@ -2,9 +2,10 @@
 
 Una experiencia web de primavera, hecha como regalo.
 
-Cinco flores amarillas. Cada una guarda una cosa distinta: una canción,
-las cosas que amo de ti, nuestras fotos, una carta y algo para cuando me
-extrañes. Cuando las cinco florecen, aparece la última pantalla.
+Seis flores amarillas. Cada una guarda una cosa distinta: una canción,
+las cosas que amo de ti, nuestras fotos, una carta, otra canción con una
+película, y algo para cuando me extrañes. Cuando las seis florecen,
+aparece la última pantalla.
 
 ---
 
@@ -33,6 +34,7 @@ del código. El archivo está numerado igual que esta lista:
 | 10 | Texto de cada foto | `FOTOS` → `titulo`, `texto`, `fecha` |
 | 11 | La carta | `CARTA.texto` |
 | 12 | Mensajes de "para cuando me extrañes" | `MENSAJES_EXTRANAR` |
+| 13 | La otra canción y la película | `CANCION_MAS` |
 
 ### Reglas rápidas para no romper nada
 
@@ -42,9 +44,10 @@ del código. El archivo está numerado igual que esta lista:
 - Para textos largos (la carta, la dedicatoria) usa los acentos invertidos
   `` ` `` y deja **una línea en blanco** entre párrafo y párrafo.
 
-### Fotos y portada
+### Fotos y portadas
 
-1. Guarda las imágenes en la carpeta **`public/fotos/`**
+1. Guarda las fotos del álbum en **`public/fotos/`**
+   y las portadas (disco, cartel de cine) en **`public/portadas/`**
 2. En `contenido.js` escribe solo la ruta corta:
 
 ```js
@@ -90,16 +93,21 @@ npm run build     # deja todo listo en la carpeta dist/
 npm run preview   # para revisarla antes de publicar
 ```
 
-## Cómo publicarla para que ella la abra desde su celular
+## Dónde está publicada
 
-Sube la carpeta `dist/` a cualquier hosting estático gratuito:
+Cada cambio que subas se publica solo en:
 
-- **Netlify Drop** — <https://app.netlify.com/drop> — arrastra la carpeta `dist` y listo.
-- **Vercel** — `npx vercel --prod`
-- **GitHub Pages** — publica el contenido de `dist/` en la rama `gh-pages`.
+**<https://claudiosparatodos-design.github.io/rutmylove/>**
 
-El proyecto está configurado con `base: './'`, así que funciona igual en la
-raíz de un dominio o dentro de una subcarpeta.
+De eso se encarga `.github/workflows/publicar.yml`. Si algún día quieres
+moverla de sitio, el proyecto usa `base: './'`, así que la carpeta `dist/`
+funciona igual en la raíz de un dominio o dentro de una subcarpeta: la
+puedes arrastrar tal cual a <https://app.netlify.com/drop>.
+
+### Empezar de cero al probar
+
+Una vez abiertas las flores se quedan florecidas. Para volver al principio,
+abre la página con `?reiniciar` al final de la dirección.
 
 ---
 
@@ -118,11 +126,13 @@ src/
 │   ├── RegaloFrases.jsx
 │   ├── RegaloAlbum.jsx
 │   ├── RegaloCarta.jsx
+│   ├── RegaloPelicula.jsx
 │   └── RegaloExtranar.jsx
 ├── componentes/
 │   ├── Flor.jsx          ← la flor SVG: de capullo a flor abierta
 │   ├── BotonEsquivo.jsx  ← el botón "NO TE AMO"
 │   ├── Panel.jsx         ← donde se abre cada regalo
+│   ├── FichaCancion.jsx  ← la canción con su portada y Spotify
 │   ├── PetalosFlotantes.jsx
 │   └── Estallido.jsx
 ├── estilos/              ← tokens de color, base y estilos por zona

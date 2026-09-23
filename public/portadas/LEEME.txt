@@ -1,0 +1,4 @@
+Portadas: la de la canción y la del cartel de la película.
+
+Si quieres cambiar alguna, deja el mismo nombre de archivo y se
+cambia sola. Si le pones otro nombre, actualízalo en src/contenido.js

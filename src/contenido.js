@@ -154,6 +154,65 @@ export const MENSAJES_EXTRANAR = [
 ]
 
 /* ───────────────────────────────────────────────────────────────
+   13 · UNA CANCIÓN MÁS Y UNA PELÍCULA   (Flor 5)
+   ───────────────────────────────────────────────────────────────
+   Primero suena la canción, después viene tu texto, y al final
+   aparece el cartel de la película como cierre.
+
+   Las portadas viven en  public/portadas/
+   ─────────────────────────────────────────────────────────────── */
+export const CANCION_MAS = {
+  titulo: 'Una canción más',
+
+  cancion: {
+    titulo: 'Arrullo de Estrellas',
+    artista: 'Zoé',
+    album: 'Programaton',
+    spotify: 'https://open.spotify.com/track/1p4rYrxjVkj6v2eMzRhLfA',
+    portada: 'portadas/arrullo-de-estrellas.jpg',
+  },
+
+  // ✏️  Tu texto. Deja una línea en blanco entre párrafo y párrafo.
+  texto: `Esta otra canción ya te había dicho que la escucharas, pero no te había
+dicho lo especial que es para mí.
+
+Desde niño me gusta mucho Zoé, y hay una película que a lo mejor es de las
+únicas que me gustan de amor jajaja, pero que realmente me gusta porque creo
+que el mensaje que deja me pareció muy importante. Es una chica que olvida
+todo cuando es un nuevo día, y este chico por casualidad termina enamorándose
+de ella. Por obvias razones le es muy difícil mantener una relación con él,
+porque ella lo olvida cada día, pero él sabía lo que quería y dio todo por
+ella sin importar lo difícil que fuera, y decide enamorarla todos los días.
+
+Y eso es lo que quiero hacer contigo: quiero enamorarte, no solo hoy o mañana,
+sino siempre, todos los días que esté junto a ti. Y que no pase lo que suele
+pasar, que las parejas se acostumbran, dejan de ser detallistas y ya no le
+ponen el mismo empeño. Quiero que, si algún día la vida nos junta, no parar de
+enamorarte cada día que pase. Esa es mi promesa.
+
+Si algo llegara a pasar, yo no sé cuánto dure (espero que toda la vida), pero
+cuando sientas que te fallé y que ya no tengo detalles, bótame para la calle,
+porque quiero amarte siempre, que estés conmigo siempre. Si tengo errores,
+házmelos saber. Yo quiero quererte y que tú quieras quererme: querer querernos :)
+
+¿Y bueno, qué tiene que ver esto con la canción? jajaja. Al final de la
+película lo verás. Esa canción se quedó muy dentro de mi corazón, tanto que me
+prometí no dedicársela a nadie que no sintiera que fuera la indicada. Y yo
+siento que tú eres la indicada, y eso ya lo sabía desde el primer día.
+
+Te quiero, Rut. No sabes cuánto ❤️`,
+
+  pelicula: {
+    // Encabezado pequeño que anuncia la película
+    antesala: 'La película',
+    titulo: 'Como si fuera la primera vez',
+    detalle: 'México · 2019',
+    cartel: 'portadas/como-si-fuera-la-primera-vez.jpg',
+    donde: 'P.D. La película está en Netflix.',
+  },
+}
+
+/* ───────────────────────────────────────────────────────────────
    MÚSICA AMBIENTAL  (opcional — puedes ignorar esto)
    ───────────────────────────────────────────────────────────────
    Si quieres una musiquita de fondo, guarda un .mp3 en  public/
@@ -185,10 +244,10 @@ export const INTRO = {
 /* PANTALLA 2 — El jardín */
 export const JARDIN = {
   titulo: 'Escoge un regalo, rutsita 🌼',
-  subtitulo: 'Te preparé cinco pequeñas cosas que me recuerdan a ti.',
+  subtitulo: 'Te preparé seis pequeñas cosas que me recuerdan a ti.',
   pista: 'Toca una flor',
   desbloqueo: 'Algo floreció',
-  desbloqueoNota: 'Abriste las cinco flores',
+  desbloqueoNota: 'Abriste las seis flores',
 }
 
 /* Nombres de cada flor del jardín */
@@ -197,6 +256,7 @@ export const REGALOS = {
   frases: { nombre: 'Cosas que amo de ti', icono: '💛' },
   album: { nombre: 'Nuestros momentos', icono: '📸' },
   carta: { nombre: 'Una carta para ti', icono: '💌' },
+  cancionMas: { nombre: 'Una canción más', icono: '🎬' },
   extranar: { nombre: 'Para cuando me extrañes', icono: '🌙' },
 }
 

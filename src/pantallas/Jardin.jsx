@@ -9,11 +9,12 @@ import { aparecer, enCascada, ENTRADA, resorteSuave } from '../utilidades/animac
    Las que ya abrió quedan florecidas; las que no, siguen en capullo. */
 
 export const FLORES = [
-  { clave: 'cancion',  tipo: 'margarita', ...REGALOS.cancion,  desfase: 0 },
-  { clave: 'frases',   tipo: 'tulipan',   ...REGALOS.frases,   desfase: -14 },
-  { clave: 'album',    tipo: 'ranunculo', ...REGALOS.album,    desfase: 6 },
-  { clave: 'carta',    tipo: 'estrella',  ...REGALOS.carta,    desfase: -10 },
-  { clave: 'extranar', tipo: 'pompon',    ...REGALOS.extranar, desfase: 4 },
+  { clave: 'cancion',  tipo: 'margarita', ...REGALOS.cancion,    desfase: 0 },
+  { clave: 'frases',   tipo: 'tulipan',   ...REGALOS.frases,     desfase: -14 },
+  { clave: 'album',    tipo: 'ranunculo', ...REGALOS.album,      desfase: 6 },
+  { clave: 'carta',    tipo: 'estrella',  ...REGALOS.carta,      desfase: -10 },
+  { clave: 'cancionMas', tipo: 'cosmos',  ...REGALOS.cancionMas, desfase: 10 },
+  { clave: 'extranar', tipo: 'pompon',    ...REGALOS.extranar,   desfase: -4 },
 ]
 
 export default function Jardin({ descubiertas, alAbrir, completo, alFinal }) {

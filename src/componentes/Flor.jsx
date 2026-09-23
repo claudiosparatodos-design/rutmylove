@@ -22,6 +22,7 @@ const PALETAS = {
   miel:        { tip: '#FCE7A4', medio: '#F0BB43', base: '#DC9E22', centro: '#B07C22', polen: '#8F6417' },
   limon:       { tip: '#FFFAE2', medio: '#F8E19A', base: '#EFCB63', centro: '#C9A552', polen: '#A98B41' },
   ambar:       { tip: '#FBDE9B', medio: '#EFB43C', base: '#D79A22', centro: '#AE7A1E', polen: '#8B6015' },
+  trigo:       { tip: '#FFF1C6', medio: '#F4D36E', base: '#E2B13E', centro: '#B98E30', polen: '#957020' },
 }
 
 /* Geometría de cada tipo de flor.
@@ -63,6 +64,15 @@ const TIPOS = {
       { n: 7, largo: 14, ancho: 8, punta: 0.5, giro: 9, forma: 'redonda', tono: 0.8 },
     ],
     centro: 5,
+  },
+  /* ✿ ocho pétalos en punta con una corona pequeña dentro */
+  cosmos: {
+    paleta: 'trigo',
+    coronas: [
+      { n: 8, largo: 45, ancho: 12.5, punta: 1, giro: 0, forma: 'punta' },
+      { n: 8, largo: 17, ancho: 7, punta: 0.5, giro: 22.5, forma: 'redonda', tono: 0.86 },
+    ],
+    centro: 6,
   },
   /* ✿ la flor de la historia: la del principio y la del final */
   primavera: {
