@@ -22,19 +22,30 @@ export function guardar(clave, valor) {
 }
 
 /* Borra todo lo que la página recuerda: las flores ya descubiertas y
-   la bolsa de mensajes. Útil para probar la experiencia desde cero.
+   la bolsa de mensajes. Sirve para probar la experiencia desde cero.
 
-   Se dispara abriendo la página con  ?reiniciar  al final de la
-   dirección. Después se quita solo de la barra para que ella nunca
-   vea ese trozo raro en el enlace. */
+   Se dispara poniendo  ?reiniciar  al final de la dirección.
+
+   Miramos en tres sitios porque, si la página va dentro de un marco
+   (una vista previa, por ejemplo), la dirección de arriba no siempre
+   le llega: su propia dirección, el trozo tras la almohadilla, y como
+   último recurso la página que la incrustó. */
 export function reiniciarSiSePide() {
   try {
-    const url = new URL(window.location.href)
-    if (!url.searchParams.has('reiniciar')) return
+    const propia = window.location.href
+    const dePapa = window.self !== window.top ? document.referrer || '' : ''
+    const loPide = [propia, dePapa].some((d) => /[?&#]reiniciar\b/.test(d))
+    if (!loPide) return
+
     Object.keys(window.localStorage)
       .filter((k) => k.startsWith(PREFIJO))
       .forEach((k) => window.localStorage.removeItem(k))
+
+    // Quitamos el parámetro de nuestra propia dirección para que ella
+    // nunca vea ese trozo raro en el enlace.
+    const url = new URL(propia)
     url.searchParams.delete('reiniciar')
+    if (url.hash === '#reiniciar') url.hash = ''
     window.history.replaceState(null, '', url.pathname + url.search + url.hash)
   } catch {
     /* sin memoria disponible: no hay nada que borrar */
