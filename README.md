@@ -106,8 +106,10 @@ puedes arrastrar tal cual a <https://app.netlify.com/drop>.
 
 ### Empezar de cero al probar
 
-Una vez abiertas las flores se quedan florecidas. Para volver al principio,
-abre la página con `?reiniciar` al final de la dirección.
+El jardín ya se reinicia solo cada vez que se abre la página. Lo único que
+se recuerda entre visitas es qué mensajes de "para cuando me extrañes" ya
+salieron, para no repetirle ninguno. Si quieres borrar también eso, abre la
+página con `?reiniciar` al final de la dirección.
 
 ---
 
@@ -146,8 +148,9 @@ src/
 
 - La flor de la primera pantalla es un **capullo cerrado**. La de la última
   es **la misma flor, completamente abierta**.
-- Las flores que ya abrió se quedan florecidas y con el nombre en dorado.
-  Se recuerda en el navegador, así que si vuelve otro día sigue ahí.
+- Las flores que abre se quedan florecidas y con el nombre en dorado
+  **durante esa visita**. Al recargar o volver otro día, el jardín está
+  otra vez cerrado: puede vivir la experiencia entera las veces que quiera.
 - Los mensajes de "para cuando me extrañes" salen barajados: **no repite
   ninguno** hasta que los haya visto todos.
 - El botón "NO TE AMO" nunca se pone encima de "TE AMO" mientras se puede

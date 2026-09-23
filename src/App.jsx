@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 
 import Intro from './pantallas/Intro'
@@ -15,7 +15,6 @@ import RegaloCarta from './regalos/RegaloCarta'
 import RegaloPelicula from './regalos/RegaloPelicula'
 import RegaloExtranar from './regalos/RegaloExtranar'
 
-import { leer, guardar } from './utilidades/almacenamiento'
 import { cambioDePantalla } from './utilidades/animaciones'
 import { FRASES_TEXTOS, EXTRANAR_TEXTOS, REGALOS, JARDIN } from './contenido'
 
@@ -41,12 +40,12 @@ const movimiento = {
 export default function App() {
   const [etapa, setEtapa] = useState('intro')          // intro · jardin · final
   const [abierta, setAbierta] = useState(null)         // flor abierta ahora mismo
-  const [descubiertas, setDescubiertas] = useState(() => {
-    const previas = leer('descubiertas', [])
-    return Array.isArray(previas) ? previas.filter((c) => TODAS.includes(c)) : []
-  })
 
-  useEffect(() => { guardar('descubiertas', descubiertas) }, [descubiertas])
+  /* Qué flores lleva abiertas. A propósito NO se guarda en el
+     navegador: al recargar o volver otro día, el jardín está otra
+     vez cerrado y puede vivir la experiencia entera desde el
+     principio, tantas veces como quiera. */
+  const [descubiertas, setDescubiertas] = useState([])
 
   const completo = useMemo(
     () => TODAS.every((clave) => descubiertas.includes(clave)),
