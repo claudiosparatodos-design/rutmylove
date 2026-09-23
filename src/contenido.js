@@ -320,7 +320,7 @@ así que intenté hacerte un pequeño jardín.`,
   parrafo2: `No es lo mismo que poder estar ahí contigo,
 pero cada flor, cada palabra y cada detalle
 los hice pensando en ti.`,
-  teAmo: 'Te amo muchísimo.',
+  teAmo: 'Te quiero.',
   milFlores: 'Te regalaría mil flores si pudiera.',
 
   // Mensaje final — texto exacto, no lo cambies si no quieres
