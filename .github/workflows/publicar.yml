@@ -1,0 +1,54 @@
+# Publica la página en GitHub Pages cada vez que se sube un cambio.
+#
+# Para encenderlo, una sola vez:
+#   Settings → Pages → Build and deployment → Source: GitHub Actions
+#
+# A partir de ahí, cada cambio que subas se publica solo en
+# https://claudiosparatodos-design.github.io/rutmylove/
+
+name: Publicar la página
+
+on:
+  push:
+    branches: [claude/blissful-mccarthy-27go5h]
+  # Permite lanzarlo a mano desde la pestaña Actions
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Si subes dos cambios seguidos, se publica el último y no se pisan
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4
