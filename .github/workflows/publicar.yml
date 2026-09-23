@@ -1,9 +1,10 @@
 # Publica la página en GitHub Pages cada vez que se sube un cambio.
 #
-# Para encenderlo, una sola vez:
+# Intenta encender Pages por su cuenta la primera vez. Si no pudiera,
+# se enciende a mano una sola vez en:
 #   Settings → Pages → Build and deployment → Source: GitHub Actions
 #
-# A partir de ahí, cada cambio que subas se publica solo en
+# Cada cambio que subas se publica solo en
 # https://claudiosparatodos-design.github.io/rutmylove/
 
 name: Publicar la página
@@ -39,6 +40,9 @@ jobs:
       - run: npm run build
 
       - uses: actions/configure-pages@v5
+        with:
+          # Intenta encender Pages solo la primera vez
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
