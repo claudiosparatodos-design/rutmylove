@@ -154,6 +154,12 @@
   color: var(--tinta);
   text-wrap: pretty;
 }
+/* Una frase larga necesita menos cuerpo para seguir respirando */
+.tarjeta--larga .tarjeta__texto {
+  font-size: 1.0625rem;
+  line-height: 1.66;
+  text-align: left;
+}
 .tarjeta__conteo {
   display: block;
   margin-top: 18px;
@@ -201,7 +207,7 @@
   display: grid;
   place-items: start center;
   width: 100%;
-  min-height: 340px;
+  min-height: min(56svh, 420px);
 }
 .album__escenario > * { grid-area: 1 / 1; }
 
@@ -216,15 +222,31 @@
 
 .album__marco {
   position: relative;
-  aspect-ratio: 4 / 5;
+  /* La proporción la pone cada foto al cargarse */
+  aspect-ratio: var(--proporcion, 0.8);
+  width: auto;
+  max-width: 100%;
+  max-height: 56svh;
+  margin-inline: auto;
   overflow: hidden;
   background: var(--crema-hondo);
   border-radius: var(--r-lg);
   box-shadow: var(--sombra-media);
 }
-.album__marco img {
+/* El fondo desenfocado y la foto entera encima */
+.album__fondo {
+  position: absolute;
+  inset: -10%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) saturate(1.2) brightness(1.04);
+  transform: scale(1.06);
+  transition: opacity 0.65s ease;
+}
+.album__foto {
+  position: relative;
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: opacity 0.65s ease;
   -webkit-user-drag: none;
   user-select: none;

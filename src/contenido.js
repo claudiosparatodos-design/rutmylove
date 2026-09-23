@@ -33,16 +33,16 @@ export const NOMBRES = {
    ─────────────────────────────────────────────────────────────── */
 export const CANCION = {
   // 3 · Nombre de la canción
-  titulo: 'El nombre de la canción',
+  titulo: 'Frenesí',
 
   // 4 · Artista
-  artista: 'El artista',
+  artista: 'lil benjas',
 
   // 5 · Link de Spotify (pega aquí el enlace de la canción)
-  spotify: 'https://open.spotify.com',
+  spotify: 'https://open.spotify.com/track/2yQEs7Z02mF9hCKIYzkuXr',
 
   // 6 · Portada de la canción
-  portada: '',
+  portada: 'portadas/frenesi.jpg',
 
   // 7 · Tu dedicatoria (puedes escribir varios párrafos separándolos con
   //     una línea en blanco, igual que aquí abajo)
@@ -63,9 +63,10 @@ export const FRASES = [
   'Eres mi sol en mis días nublados.',
   'Me encanta la forma en que haces que cualquier día normal se sienta especial.',
   'Me encanta poder ser yo cuando estoy contigo.',
-  'Si pudiera volver al día en que te conocí, volvería a escogerte.',
-  'Me gusta cómo te ríes de tus propios chistes antes de terminarlos.',
-  'Podría seguir escribiendo, pero esta página no tendría suficiente espacio para todo lo que amo de ti.',
+  'Te elegiría una y mil veces sin dudarlo.',
+  'Amo tu sonrisa, es la que me convenció de que la vida es bella.',
+  'Entre más tiempo paso contigo, más me convenzo de que eres con quien quiero pasar toda mi vida ❤️',
+  'Podría seguir escribiendo, pero esta página no tendría suficiente espacio para todo lo que amo de ti. Pero no te preocupes: el universo será testigo de las locuras que haré por ti, porque enamorarme de ti fue lo más fácil del mundo. Nada me importa más que tú, y cada día que estoy vivo estoy consciente de eso. Te amé desde el primer día en que te conocí, te amo hoy y te amaré por el resto de mi vida, no importa qué.',
 ]
 
 // Mensaje que aparece cuando ya se acabaron todas las frases de arriba
@@ -87,15 +88,34 @@ export const FRASE_FINAL = 'Y todavía me faltan muchísimas cosas por decirte..
    ─────────────────────────────────────────────────────────────── */
 export const FOTOS = [
   {
-    imagen: 'fotos/foto-1.jpg',
-    titulo: 'Este momento...',
-    texto: 'No sabía que ese día terminaría convirtiéndose en uno de mis recuerdos favoritos.',
+    imagen: 'fotos/recuerdo-1-zucaritas.jpg',
+    titulo: '',
+    texto: 'Me hacías feliz con tus videos, esos que hacías para que cayeran como gorda en tobogán, rendidos a tus pies según tú jajajaja. Na, pero en serio, me gustaban mucho esos videos que ni te pedía y me mandabas porque sí, me alegraban el día. Era muy bonito, neta que me dibujabas una sonrisota :) Ahora no veo unas Zucaritas sin pensar en ti jajajaja.',
     fecha: '',
   },
   {
-    imagen: 'fotos/foto-2.jpg',
+    imagen: 'fotos/recuerdo-2-mascarilla.jpg',
     titulo: '',
-    texto: 'Aquí escribe lo que quieras de esta foto.',
+    texto: 'Otra prueba de que me mandabas fotos bien cool jajajaja. ¿Aunque pones esas mascarillas? Hay que ponernos unas.',
+    fecha: '',
+  },
+  {
+    imagen: 'fotos/recuerdo-3-ipad.jpg',
+    titulo: '',
+    texto: 'Hasta te tenía de fondo de pantalla. Loco me traías, y me sigues teniendo. (Por cierto, esa iPad murió jajaja.)',
+    fecha: '',
+  },
+  {
+    imagen: 'fotos/recuerdo-4-facebook.jpg',
+    titulo: '',
+    texto: 'Las mejores indirectas jajaja. Y creo que ya me estoy tardando en mandarte otro audiolibro.',
+    fecha: '',
+  },
+  {
+    // ⚠️  FALTA LA FOTO: guárdala como  public/fotos/recuerdo-5-noches.jpg
+    imagen: 'fotos/recuerdo-5-noches.jpg',
+    titulo: '',
+    texto: 'Esas noches en las que hablábamos horas... que se repita. Por cierto, Google Fotos guarda muchos recuerdos jajajaja. Y me gusta decirte Rutelia, perdón si a ti no te gusta jajajaja, ya no te digo así pues. Bueno, nomás a veces, no te enojes.',
     fecha: '',
   },
 ]
@@ -254,7 +274,7 @@ export const JARDIN = {
 export const REGALOS = {
   cancion: { nombre: 'Una canción para ti', icono: '🎵' },
   frases: { nombre: 'Cosas que amo de ti', icono: '💛' },
-  album: { nombre: 'Nuestros momentos', icono: '📸' },
+  album: { nombre: 'Recuerdos de ti', icono: '❤️' },
   carta: { nombre: 'Una carta para ti', icono: '💌' },
   cancionMas: { nombre: 'Una canción más', icono: '🎬' },
   extranar: { nombre: 'Para cuando me extrañes', icono: '🌙' },

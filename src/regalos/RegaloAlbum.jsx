@@ -10,24 +10,52 @@ import { ENTRADA, SALIDA } from '../utilidades/animaciones'
 
 const UMBRAL = 60 // píxeles de arrastre para pasar de foto
 
+/* Cada foto manda sobre su propio marco: una vertical se ve alta y
+   una horizontal se ve ancha, sin recortes ni franjas vacías.
+   Los topes evitan que una captura larguísima se coma la pantalla. */
+const PROPORCION_MINIMA = 0.52   // la más alta permitida
+const PROPORCION_MAXIMA = 1.6    // la más ancha permitida
+
 function Marco({ foto }) {
   const [estado, setEstado] = useState('cargando')
+  const [proporcion, setProporcion] = useState(0.8)
   const src = resolverImagen(foto.imagen)
 
+  const alCargar = (e) => {
+    const { naturalWidth: w, naturalHeight: h } = e.currentTarget
+    if (w && h) {
+      setProporcion(Math.min(PROPORCION_MAXIMA, Math.max(PROPORCION_MINIMA, w / h)))
+    }
+    setEstado('lista')
+  }
+
+  const visible = estado === 'lista'
+
   return (
-    <div className="album__marco">
+    <div className="album__marco" style={{ '--proporcion': proporcion }}>
       {estado !== 'lista' && <span className="album__esqueleto" aria-hidden="true" />}
       {estado !== 'rota' && src ? (
-        <img
-          src={src}
-          alt={foto.titulo || foto.texto || 'Un recuerdo nuestro'}
-          loading="lazy"
-          decoding="async"
-          draggable="false"
-          onLoad={() => setEstado('lista')}
-          onError={() => setEstado('rota')}
-          style={{ opacity: estado === 'lista' ? 1 : 0 }}
-        />
+        <>
+          {/* La misma foto, desenfocada detrás: así caben por igual
+              las verticales, las horizontales y las capturas de
+              pantalla, sin recortarle nada a ninguna. */}
+          <span
+            className="album__fondo"
+            aria-hidden="true"
+            style={{ backgroundImage: `url("${src}")`, opacity: visible ? 1 : 0 }}
+          />
+          <img
+            className="album__foto"
+            src={src}
+            alt={foto.titulo || foto.texto || 'Un recuerdo nuestro'}
+            loading="lazy"
+            decoding="async"
+            draggable="false"
+            onLoad={alCargar}
+            onError={() => setEstado('rota')}
+            style={{ opacity: visible ? 1 : 0 }}
+          />
+        </>
       ) : null}
 
       {(estado === 'rota' || !src) && (

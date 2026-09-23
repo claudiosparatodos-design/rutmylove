@@ -42,7 +42,7 @@ export default function RegaloFrases() {
           {actual && (
             <motion.blockquote
               key={abiertas.length}
-              className="tarjeta"
+              className={`tarjeta ${actual.length > 150 ? 'tarjeta--larga' : ''}`}
               initial={{ opacity: 0, y: 30, scale: 0.94, rotate: -1.2, filter: 'blur(8px)' }}
               animate={{
                 opacity: 1, y: 0, scale: 1, rotate: 0, filter: 'blur(0px)',
