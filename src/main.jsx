@@ -9,7 +9,11 @@ import './estilos/componentes.css'
 import './estilos/pantallas.css'
 import './estilos/regalos.css'
 
+import { reiniciarSiSePide } from './utilidades/almacenamiento'
 import App from './App'
+
+// Antes de dibujar nada, por si se pidió empezar de cero
+reiniciarSiSePide()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
